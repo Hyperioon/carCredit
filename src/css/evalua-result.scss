@@ -1,0 +1,42 @@
+.evalua-result {
+	font-size: 0.32rem;
+	font-weight: PingFang-SC-Regula;
+	color: #353535;
+	padding-top: 0.88rem;
+	.result {
+		position: absolute;
+		right: 0.26rem;
+		top: 0.26rem;
+		z-index: 1001;
+	}
+	.content {
+		text-align: center;
+		height: 1.74rem;
+		line-height: 1.74rem;
+		border-top: 1px solid #d0d0d0;
+		border-bottom: 1px solid #d0d0d0;
+		font-size: 0.36rem;
+		span {
+			color: rgb(251, 121, 80);
+		}
+	}
+	.result-type {
+		height: 1.3rem;
+		line-height: 1.3rem;
+		border-bottom: 1px solid #d0d0d0;
+		padding: 0 0.26rem;
+	}
+	.result-time {
+		height: 0.9rem;
+		line-height: 0.9rem;
+		border-bottom: 1px solid #d0d0d0;
+		padding: 0 0.26rem;
+	}
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+		color: #aaaaaa;
+	}
+}

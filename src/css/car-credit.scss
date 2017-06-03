@@ -1,0 +1,213 @@
+.car-credit {
+	background-color: white;
+	box-sizing: border-box;
+	font-family: PingFang-SC-Medium;
+	.absolute-car {
+		position: fixed;
+		top: 0;
+		right: 0.65rem;
+		z-index: 1001;
+		line-height: 0.88rem;
+		font-size: 0.3rem;
+		color: #353535;
+	}
+	.icon-wrapper {
+		display: flex;
+		flex-direction: row;
+		height: 2.06rem;
+		width: 100%;
+		border-bottom: 0.2rem solid #f2f2f2;
+		span {
+			flex: 1;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			img {
+				width: 0.56rem;
+				height: 0.44rem;
+				margin-top: 0.3rem;
+				margin-bottom: 0.2rem;
+			}
+			.title {
+				margin-bottom: 0.08rem;
+				font-size: 0.24rem;
+				color: #353535;
+				display: inline-block;
+			}
+			.content {
+				font-size: 0.22rem;
+				color: #aaaaaa;
+				display: inline-block;
+			}
+		}
+	}
+	.condition {
+		h2 {
+			height: 0.88rem;
+			line-height: 0.88rem;
+			text-align: center;
+			font-size: 0.3rem;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.detail {
+			padding: 0 0.24rem;
+			border-bottom: 1px solid #f2f2f2;
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			img {
+				width: 0.3rem;
+				height: 0.3rem;
+				position: absolute;
+				top: 0.12rem;
+				left: 0.24rem;
+			}
+			.content {
+				margin-left: 0.5rem;
+				.title {
+					display: block;
+					margin-top: 0.16rem;
+					margin-bottom: 0.16rem;
+					color: #353535;
+				}
+				span {
+					margin-left: 0.20rem;
+					display: block;
+					font-size: 0.24rem;
+					color: #6d6d6d;
+					line-height: 0.4rem;
+					&:last-child {
+						margin-bottom: 0.24rem;
+					}
+				}
+			}
+		}
+	}
+	.border {
+		height: 0.2rem;
+		width: 100%;
+		background-color: #f2f2f2;
+	}
+	.process {
+		h2 {
+			height: 0.88rem;
+			line-height: 0.88rem;
+			text-align: center;
+			font-size: 0.3rem;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.process-detail {
+			height: 1.92rem;
+			display: flex;
+			align-items: center;
+			.main {
+				flex: 1;
+				img {
+					width: 0.6rem;
+					height: 0.49rem;
+					display: block;
+					margin-left: 0.55rem;
+					// margin-top: 0.56rem;
+					margin-bottom: 0.14rem;
+				}
+				.main-left {
+					margin-left: 0.3rem;
+				}
+			}
+			.not-main {
+				width: 0.1rem;
+				img {
+					width: 0.1rem;
+					height: 0.17rem;
+				}
+			}
+ 		}
+	}
+	.cooperation {
+		h2 {
+			height: 0.88rem;
+			line-height: 0.88rem;
+			text-align: center;
+			font-size: 0.3rem;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.img-wrapper {
+			padding: 0.26rem;
+			.img-detail {
+				display: inline-block;
+				.tdjf {
+					margin-bottom: 0.6rem;
+				}
+			}
+			.logo1 {
+				width: 1.3rem;
+				height: 0.6rem;
+				margin-top: 0.12rem;
+				margin-right: 0.8rem;
+			}
+			.logo2 {
+				width: 2.06rem;
+				height: 0.6rem;
+				margin-right: 0.36rem;
+			}
+			.logo3 {
+				width: 1.93rem;
+				margin-right: 0.36rem;
+			}
+			.logo4 {
+				width: 2rem;
+				height: 0.6rem;
+			}
+			span {
+				display: block;
+				margin-left: 0.26rem;
+				margin-top: 0.2rem;
+			}
+		}
+	}
+	.phone {
+		h2 {
+			height: 0.88rem;
+			line-height: 0.88rem;
+			text-align: center;
+			font-size: 0.3rem;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.phone-content {
+			display: block;
+			line-height: 0.44rem;
+			position: relative;
+			margin: 0.22rem 0;
+			.number {
+				margin-left: 0.66rem;
+			}
+		}
+		.phone-wrapper {
+			padding: 0 0.65rem;
+		}
+		.phone-img {
+			display: inline-block;
+			width: 0.32rem;
+			height: 0.32rem;
+			background: url('../assets/icon_call.png') no-repeat center center / contain;
+			position: absolute;
+			top: 50%;
+			margin-top: -0.16rem;
+		}
+	}
+	.application {
+		width: 100%;
+		margin-top: 0.72rem;
+		font-size: 0.32rem;
+		margin-bottom: 0.4rem;
+		height: 0.8rem;
+		button {
+			height: 0.8rem;
+			color: white;
+			width: 94%;
+			margin-left: 0.24rem;
+			background-color: #54b7f0;
+			border-radius: 0.04rem;
+		}
+	}
+}

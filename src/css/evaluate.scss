@@ -1,0 +1,67 @@
+.car-evaluate {
+	padding-top: 0.88rem;
+	.evalua {
+		height: 0.88rem;
+		line-height: 0.88rem;
+		border-bottom: 1px solid #d0d0d0;
+		padding: 0 0.2rem 0 0.2rem;
+		font-family: PingFang-SC-Regular;
+		.left {
+			color: #353535;
+			font-size: 0.32rem;
+			float: left;
+		}
+		.right {
+			color: #bcbcbc;
+			font-size: 0.32rem;
+			float: right;
+			.arrow {
+				display: inline-block;
+				margin-left: 0.1rem;
+				width: 0.1rem;
+				height: 0.17rem;
+				background: url('../assets/icon_arrow.png') no-repeat center center / contain;
+			}
+		}
+		.far {
+			color: #353535;
+			font-size: 0.35rem;
+			margin-top: 0.02rem;
+		}
+		.input {
+			height: 0.6rem;
+			margin-top: 0.08rem;
+			margin-right: 0.1rem;
+			width: 2rem;
+			text-align: right;
+			color: #353535;
+			font-size: 0.36rem;
+		}
+	}
+	.available {
+		position: absolute;
+		left: 0.24rem;
+		bottom: 0.4rem;
+		width: 95%;
+		height: 0.8rem;
+		border-radius: 0.04rem;
+		background-color: #54b7f0;
+		color: white;
+		font-size: 0.3rem;
+		font-family: PngFang-SC-Medium;
+	}
+	.not-available {
+		position: absolute;
+		left: 2%;
+		bottom: 0.4rem;
+		width: 96%;
+		height: 0.8rem;
+		border-radius: 0.04rem;
+		color: white;
+		font-size: 0.3rem;
+		font-family: PngFang-SC-Medium;
+	}
+	input::-webkit-input-placeholder,textarea::-webkit-input-placeholder,textarea::-webkit-input-placeholder {  /* WebKit browsers */
+	font-size: 0.30rem;
+}
+}

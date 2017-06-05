@@ -6,7 +6,10 @@ const state = {
 		addressCity: '',
 		dataYear: '',
 		dataMonth: '',
-		miles: ''
+		miles: '',
+		cityId: '',
+		carId: '',
+		carName: ''
 	}
 };
 
@@ -23,13 +26,13 @@ const actions = {
 	chooseData({commit}, data) {
 		commit(types.CHOOSE_DATA, data);
 	},
-	// 保存车辆行驶里程
-	changeMiles({commit}, data) {
-		commit(types.SAVE_MILES, data);
-	},
 	// 保存车辆上牌城市
 	saveAddress({commit}, data) {
 		commit(types.SAVE_CITY, data);
+	},
+	// 保存选定的车型
+	saveCarId({commit}, data) {
+		commit(types.SAVE_CAR, data);
 	}
 };
 
@@ -39,13 +42,15 @@ const mutations = {
 		state.car.dataYear = data[0];
 		state.car.dataMonth = data[1];
 	},
-	[types.SAVE_MILES](state, data) {
-		state.car.miles = data;
-	},
 	[types.SAVE_CITY](state, data) {
 		console.log(data);
-		state.car.addressProvince = data[0];
-		state.car.addressCity = data[1];
+		state.car.cityId = data.cityId;
+		state.car.addressProvince = data.addressProvince;
+		state.car.addressCity = data.addressCity;
+	},
+	[types.SAVE_CAR](state, data) {
+		state.car.carName = data.modelName;
+		state.car.carId = data.modelId;
 	}
 };
 

@@ -1,12 +1,13 @@
 <template>
 	<div class='choose-brand'>
 		<public-header></public-header>
-		<h1 class='page-title'>Index List</h1>
-		<p class='page-indexlist-desc'>此例请使用手机查看</p>
 		<div class='page-indexlist-wrapper'>
 			<mt-index-list>
 				<mt-index-section v-for='item in list' :index='item[0].initial'>
-					<mt-cell v-for='cell in item' :title='cell.brandName' :click='chooseBrand'></mt-cell>
+					<span v-for='cell in item' @click='chooseBrand(cell)' :title='cell.brandName'>
+						<mt-cell :title='cell.brandName'>
+						</mt-cell>
+					</span>
 				</mt-index-section>
 			</mt-index-list>
 		</div>
@@ -28,7 +29,7 @@ export default {
 	},
 	methods: {
 		chooseBrand(cell) {
-			console.log(cell);
+			this.$router.push({name: '选择车系', params: { brandName: cell.brandName, brandId: cell.brandId }});
 		}
 	},
 	mounted() {
@@ -41,3 +42,6 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+	@import '../css/choose-brand.scss';
+</style>

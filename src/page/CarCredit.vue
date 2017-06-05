@@ -129,7 +129,10 @@
 				</div>
 			</div>
 			<div class='application'>
-				<button>立即申请</button>
+				<a href="http://192.168.18.20:8030/carCredit/m/carItem/addPerson.htm?customerKey=1314">
+					<button>立即申请</button>
+				</a>
+				
 			</div>
 		</div>
 	</div>
@@ -139,6 +142,8 @@
 	export default {
 		components: {
 			PublicHeader: PublicHeader
+		},
+		methods: {
 		}
 	};
 

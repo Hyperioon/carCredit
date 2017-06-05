@@ -16,11 +16,15 @@
 			height: 0.4rem;
 			line-height: 0.4rem;
 			background-color: #f1f1f1;
-			margin-left: 0.26rem
+			span {
+				margin-left: 0.26rem
+			}
 		}
 		.type-content {
 			padding: 0 0.26rem;
-			.car-style {
+			.content-item {
+				border-bottom: 1px solid #d0d0d0;
+				.car-style {
 				margin-top: 0.3rem;
 				margin-bottom: 0.24rem;
 				font-size: 0.32rem;
@@ -33,5 +37,7 @@
 				display: block;
 			}
 		}
+			}
+			
 	}
 }

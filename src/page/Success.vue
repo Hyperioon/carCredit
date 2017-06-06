@@ -1,8 +1,7 @@
 <template>
 	<div class="BusinessCredit">
 		<header>
-			<img src="../../static/img/icon_back.png" @click="back" class="left">
-			<p class="pass-title">申请借款</p>
+			<public-header></public-header>
 		</header>
 		<div class="pic">
 			<img src="../../static/img/icon_success.png" alt="">
@@ -24,7 +23,11 @@
 	</div>
 </template>
 <script>
+	import PublicHeader from '../components/public/Header.vue';
 	export default {
+		components: {
+			PublicHeader: PublicHeader
+		},
 		methods: {
 			back() {
 				this.$router.go(-1);

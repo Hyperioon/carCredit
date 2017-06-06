@@ -1,9 +1,6 @@
 <template>
 	<div class="apply">
-		<header>
-			<img src="../../static/img/icon_back@2x.png" @click="back" class="left">
-			<p class="pass-title">申请贷款</p>
-		</header>
+		<public-header></public-header>
 		<div class="apply-ipt">
 			<p class="apply-p">真实姓名：</p>
 			<div class="apply-d">
@@ -144,7 +141,11 @@
 	</div>
 </template>
 <script>
+	import PublicHeader from '../components/public/Header.vue';
 	export default {
+		components: {
+			PublicHeader: PublicHeader
+		},
 		data() {
 			return {
 				slots0: [{

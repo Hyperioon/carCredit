@@ -1,9 +1,6 @@
 <template>
 	<div>
-		<header style="border:0;">
-			<img src="../../static/img/icon_back@2x.png" @click="back" class="left">
-			<p class="pass-title">臻商贷</p>
-		</header>
+		<public-header></public-header>
 		<div class="banner">
 			<img class="banner" src="../../static/img/pic_banner@2x.png" />
 		</div>
@@ -49,7 +46,11 @@
 	</div>
 </template>
 <script>
+import PublicHeader from '../components/public/Header.vue';
 export default {
+	components: {
+		PublicHeader: PublicHeader
+	},
 	methods: {
 		back() {
 			this.$router.go(-1);
@@ -85,76 +86,76 @@ export default {
 header {
 	display: flex;
 	justify-content: center;
-	margin-top: 0.32rem;
+	margin-top: 0.8rem;
 	position: relative;
-	height: 0.72rem;
+	height: 1.8rem;
 }
 
 .pass-title {
-	font-size: 0.36rem;
+	font-size: 0.9rem;
 	color: #353535;
 	font-family: PingFang-SC-Bold;
-	margin-bottom: 0.26rem;
+	margin-bottom: 0.65rem;
 }
 
 .left {
 	position: absolute;
-	left: 0.22rem;
+	left: 0.54rem;
 	top: 0;
-	width: 0.268rem;
-	height: 0.44rem;
+	width: 0.67rem;
+	height: 1.1rem;
 }
 
 .banner {
 
-	height: 3rem;
+	height: 7.5rem;
 	width: 100%;
 }
 
 .mortgage li {
 	position: relative;
-	height: 1.08rem;
+	height: 2.7rem;
 }
 
 .mortgage-title {
-	font-size: 0.128rem;
+	font-size: 0.32rem;
 	color: #353535;
 	font-family: '黑体';
 	font-weight: 600;
 }
 
 .circle {
-	height: 0.1rem;
-	width: 0.1rem;
+	height: 0.25rem;
+	width: 0.25rem;
 	background: #353535;
 	border-radius: 50%;
 	position: absolute;
-	top: 0.48rem;
-	left: 0.22rem;
+	top: 1.2rem;
+	left: 0.54rem;
 }
 
 .mortgage-font {
 	color: #353535;
-	font-size: 0.24rem;
+	font-size: 0.6rem;
 	font-family: PingFang-SC-Regular;
 	position: absolute;
-	top: 0.88rem;
-	left: 0.22rem;
+	top: 2.2rem;
+	left: 0.54rem;
 }
 
 .mortgage-shows {
 	font-family: '黑体';
 	font-weight: 600;
 	position: absolute;
-	font-size: 0.28rem;
-	top: 0.4rem;
-	left: 0.38rem;
+	font-size: 0.7rem;
+	top: 1rem;
+	left: 0.95rem;
 }
 
 .zsd-title {
-	margin-left: 0.22rem;
-	margin-top: 0.0rem;
-	font-size: 0.3rem;
+	margin-left: 0.54rem;
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
 	color: #353535;
 	font-family: PingFang-SC-Regular;
 }
@@ -166,19 +167,19 @@ header {
 
 footer {
 	display: flex;
-	margin-top: 1.6rem;
+	margin-top: 4rem;
 	width: 90%;
-	height: 0.8rem;
+	height: 2rem;
 	background: #ff7635;
-	margin-bottom: 0.48rem;
+	margin-bottom: 1.2rem;
 	justify-content: center;
 	margin-left: 5%;
 }
 
 footer p {
-	line-height: 0.8rem;
+	line-height: 2rem;
 	color: #ffffff;
-	font-size: 0.32rem;
+	font-size: 0.8rem;
 	font-family: PingFang-SC-Medium;
 }
 </style>

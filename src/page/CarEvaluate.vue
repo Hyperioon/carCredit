@@ -30,7 +30,7 @@
 		<div class='evalua'>
 			<span class='left-content'>行驶里程</span>
 			<span class='right far'>万公里</span>
-			<input class="right input" v-model='car.miles' placeholder="请输入里程" type="text" value="1233">
+			<input class="right input" v-model='car.miles' placeholder="请输入里程" type="number" value="">
 		</div>
 		<router-link to="/evaluaResult">
 			<button type="button" @click='startEvalua' :disabled="!this.available" :class="available?'available':'not-available'">开始评估</button>

@@ -9,7 +9,8 @@ const state = {
 		miles: '',
 		cityId: '',
 		carId: '',
-		carName: ''
+		carName: '',
+		range: []
 	}
 };
 
@@ -30,7 +31,7 @@ const actions = {
 	saveAddress({commit}, data) {
 		commit(types.SAVE_CITY, data);
 	},
-	// 保存选定的车型
+	// 保存选定的车型,时间
 	saveCarId({commit}, data) {
 		commit(types.SAVE_CAR, data);
 	}
@@ -55,6 +56,16 @@ const mutations = {
 			state.car.carName = data.modelName;
 		}
 		state.car.carId = data.modelId;
+		state.car.maxRegYear = data.maxRegYear;
+		state.car.minRegYear = data.minRegYear;
+		let range = [];
+		range.length = data.maxRegYear - data.minRegYear;
+		for (let i = 0; i < range.length; i++) {
+			range[i] = parseInt(data.minRegYear) + i;
+		}
+		state.car.range = range;
+		state.car.dataYear = '';
+		state.car.dataMonth = '';
 	}
 };
 

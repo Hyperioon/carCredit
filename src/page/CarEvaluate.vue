@@ -22,7 +22,7 @@
 		<div class='evalua'>
 			<span class='left-content'>所在城市</span>
 			<div class='right' v-show='!car.addressProvince'>
-				<span  @click="open('bottom')">未选择</span>
+				<span @click="open('bottom')">未选择</span>
 				<span class='arrow'></span>
 			</div>
 			<span class="right" @click="open('bottom')">{{car.addressProvince}} {{car.addressCity}}</span>
@@ -30,7 +30,7 @@
 		<div class='evalua'>
 			<span class='left-content'>行驶里程</span>
 			<span class='right far'>万公里</span>
-			<input class="right input" v-model='car.miles' placeholder="请输入里程" type="number" value="">
+			<input class="right input"  v-model.number ='car.miles' placeholder="请输入里程" type="number" value="">
 		</div>
 		<router-link to="/evaluaResult">
 			<button type="button" @click='startEvalua' :disabled="!this.available" :class="available?'available':'not-available'">开始评估</button>
@@ -58,6 +58,7 @@
 				</div>
 			</mu-content-block>
 		</mu-popup>
+		
 	</div>
 </template>
 <script>
@@ -65,7 +66,6 @@ import PublicHeader from '../components/public/Header.vue';
 import { Picker } from 'mint-ui';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 const data = {
-	year: [2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990],
 	mongth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 };
 const address = {
@@ -118,7 +118,9 @@ export default {
 			bottomPopup: false,
 			leftPopup: false,
 			available: false,
+			popupVisible: false,
 			error: '',
+			range: [],
 			addressSlots: [
 				{
 					flex: 1,
@@ -133,20 +135,9 @@ export default {
 					textAlign: 'center'
 				}
 			],
+			timeSlots: [],
 			addressProvince: '',
 			addressCity: '',
-			timeSlots: [
-				{
-					width: '50%',
-					textAlign: 'center',
-					values: data.year
-				},
-				{
-					width: '50%',
-					textAlign: 'center',
-					values: data.mongth
-				}
-			],
 			list: [],
 			data: ['', ''],
 			dataYear: '',
@@ -227,6 +218,19 @@ export default {
 		},
 		open(position) {
 			this[position + 'Popup'] = true;
+			data.year = this.range;
+			this.timeSlots = [
+				{
+					width: '50%',
+					textAlign: 'center',
+					values: data.year
+				},
+				{
+					width: '50%',
+					textAlign: 'center',
+					values: data.mongth
+				}
+			];
 		},
 		close(position) {
 			this[position + 'Popup'] = false;
@@ -248,18 +252,19 @@ export default {
 		// 开始评估
 		startEvalua() {
 			let data = this.car.dataYear + '-' + this.car.dataMonth;
-			this.$http.post(this.evaluaApi, {modelId: this.car.carId, regDate: data, mile: this.car.miles, zone: this.car.cityId, customerKey: 120}, { emulateJSON: true })
-			.then((response) => {
-				if (response.data.code === 0) {
-					// this.list = response.data.list;
-					console.log(response.data);
-					this.error = response.data.error;
-				}
-			});
+			this.$http.post(this.evaluaApi, { modelId: this.car.carId, regDate: data, mile: this.car.miles, zone: this.car.cityId, customerKey: 120 }, { emulateJSON: true })
+				.then((response) => {
+					if (response.data.code === 0) {
+						// this.list = response.data.list;
+						console.log(response.data);
+						this.error = response.data.error;
+					}
+				});
 		}
 	},
 	mounted() {
 		this.dataYear = this.car.dataYear;
+		this.range = this.car.range;
 	}
 };
 

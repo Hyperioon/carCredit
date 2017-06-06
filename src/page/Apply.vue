@@ -608,16 +608,6 @@
 			transform-origin: 0 0;
 		}
 	}
-
-	header {
-		display: flex;
-		justify-content: center;
-		margin-top: 0.8rem;
-		position: relative;
-		@include border(#d0d0d0);
-		height: 1.8rem;
-	}
-
 	.trans p {
 		line-height: 2rem;
 		height: 2rem;

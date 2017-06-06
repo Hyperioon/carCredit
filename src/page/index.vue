@@ -1,9 +1,6 @@
 <template>
-	<div>
-		<header>
-			<img src="../../static/img/icon_back@2x.png" class="left" @click="backall">
-			<div class="pass-title">融资</div>
-		</header>
+	<div class="index">
+		<public-header></public-header>
 		<div class="banner">
 			<img class="banner" src="../../static/img/pic_banner@2x.png" />
 		</div>
@@ -76,8 +73,11 @@
 	</div>
 </template>
 <script>
-
+import PublicHeader from '../components/public/Header';
 export default {
+	components: {
+		PublicHeader: PublicHeader
+	},
 	data() {
 		return {
 			megs: [],
@@ -108,6 +108,9 @@ export default {
 
 </script>
 <style lang="scss">
+.index {
+	padding-top: 0.88rem;
+}
 @mixin border($color) {
 	position: relative;
 	border: none;
@@ -167,8 +170,7 @@ header {
 	height: 0.44rem;
 }
 
-.banner {
-
+.index .banner {
 	height: 3rem;
 	width: 100%;
 }

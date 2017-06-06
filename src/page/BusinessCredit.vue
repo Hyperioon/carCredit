@@ -12,7 +12,6 @@
 					<li>
 						<div class="circle"></div>
 						<span class="mortgage-shows">费率超低</span>
-	
 						<p class="mortgage-font">利息低至0.04%，还款压力小。</p>
 					</li>
 					<li>
@@ -83,13 +82,6 @@ export default {
 	}
 }
 
-header {
-	display: flex;
-	justify-content: center;
-	margin-top: 0.8rem;
-	position: relative;
-	height: 1.8rem;
-}
 
 .pass-title {
 	font-size: 0.9rem;

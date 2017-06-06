@@ -1,3 +1,23 @@
 .choose-brand {
 	padding-top: 0.88rem;
+	.mint-indexlist-content {
+		height: 100%;
+	}
+	.mint-indexsection-index {
+		background-color: #f1f1f1;
+		font-size: 0.24rem;
+		color: #353535;
+		height: 0.4rem;
+		line-height: 0.4rem;
+		padding: 0;
+		padding-left: 0.24rem;
+	}
+	.mint-cell {
+		height: 0.9rem;
+		line-height: 0.9rem;
+		padding: 0;
+	}
+	.mint-indexlist-nav {
+		border: none;
+	}
 }

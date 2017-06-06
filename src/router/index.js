@@ -11,6 +11,9 @@ import EvaluaResult from '../page/EvaluaResult.vue';
 import Index from '../page/index.vue';
 import CarType from '../page/CarType.vue';
 import ChooseType from '../page/ChooseType.vue';
+import BusinessCredit from '../page/BusinessCredit.vue';
+import Apply from '../page/Apply.vue';
+import Success from '../page/Success.vue';
 
 Vue.use(Router);
 
@@ -28,6 +31,9 @@ export default new Router({
 		{ path: '/evaluaResult', name: '评估结果', component: EvaluaResult },
 		{ path: '/xiaojiu', name: '小九金福', component: xiaojiu },
 		{ path: '/carType', name: '选择车型', component: CarType },
-		{ path: '/chooseType', name: '选择车系', component: ChooseType }
+		{ path: '/chooseType', name: '选择车系', component: ChooseType },
+		{ path: '/BusinessCredit', name: '臻商贷', component: BusinessCredit },
+		{ path: '/Apply', name: '立即申请', component: Apply },
+		{ path: '/Success', name: '提交申请', component: Success }
 	]
 });

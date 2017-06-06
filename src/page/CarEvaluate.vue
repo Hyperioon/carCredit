@@ -2,7 +2,7 @@
 	<div class='car-evaluate'>
 		<public-header></public-header>
 		<div class='evalua car-type'>
-			<span class='left'>选择车型</span>
+			<span class='left-content'>选择车型</span>
 			<router-link to='/chooseBrand'>
 				<div v-show='!car.carName' class='right'>
 					<span>未选择</span>
@@ -12,7 +12,7 @@
 			</router-link>
 		</div>
 		<div class='evalua'>
-			<span class='left'>上牌时间</span>
+			<span class='left-content'>全新车上牌时间</span>
 			<div class='right'>
 				<span v-show='!dataYear' @click="open('left')">未选择 </span>
 				<span class='arrow'></span>
@@ -20,7 +20,7 @@
 			<span v-show='dataYear' class="right" @click="open('left')">{{dataYear}}年{{car.dataMonth}}月</span>
 		</div>
 		<div class='evalua'>
-			<span class='left'>所在城市</span>
+			<span class='left-content'>所在城市</span>
 			<div class='right' v-show='!car.addressProvince'>
 				<span  @click="open('bottom')">未选择</span>
 				<span class='arrow'></span>
@@ -28,7 +28,7 @@
 			<span class="right" @click="open('bottom')">{{car.addressProvince}} {{car.addressCity}}</span>
 		</div>
 		<div class='evalua'>
-			<span class='left'>行驶里程</span>
+			<span class='left-content'>行驶里程</span>
 			<span class='right far'>万公里</span>
 			<input class="right input" v-model='car.miles' placeholder="请输入里程" type="text" value="1233">
 		</div>
@@ -118,6 +118,7 @@ export default {
 			bottomPopup: false,
 			leftPopup: false,
 			available: false,
+			error: '',
 			addressSlots: [
 				{
 					flex: 1,
@@ -252,7 +253,7 @@ export default {
 				if (response.data.code === 0) {
 					// this.list = response.data.list;
 					console.log(response.data);
-					// this.list = this.changeArr();
+					this.error = response.data.error;
 				}
 			});
 		}

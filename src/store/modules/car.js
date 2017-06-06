@@ -49,7 +49,11 @@ const mutations = {
 		state.car.addressCity = data.addressCity;
 	},
 	[types.SAVE_CAR](state, data) {
-		state.car.carName = data.modelName;
+		if (data.modelName.length > 38) {
+			state.car.carName = data.modelName.substring(0, 38) + '...';
+		} else {
+			state.car.carName = data.modelName;
+		}
 		state.car.carId = data.modelId;
 	}
 };

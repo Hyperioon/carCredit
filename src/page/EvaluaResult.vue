@@ -1,7 +1,7 @@
 <template>
 	<div class='evalua-result'>
 		<public-header></public-header>
-		<span class='result'>完成</span>
+		<span class='result' @click='goIndex'>完成</span>
 		<div class='content'>
 			当前估值：
 			<span>13.99</span> 万
@@ -36,6 +36,11 @@ export default {
 		...mapGetters({
 			car: 'car'
 		})
+	},
+	methods: {
+		goIndex() {
+			this.$router.push('carCredit');
+		}
 	}
 };
 </script>

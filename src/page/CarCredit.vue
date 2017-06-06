@@ -88,7 +88,7 @@
 					<router-link to="/tuodao">
 						<div class='img-detail'>
 							<img class='logo1' src="../assets/pic_logo_tdjf.png" alt="">
-							<span class='tdjf'>拓道金福</span>
+							<span class='tdjf'>拓道金服</span>
 						</div>
 					</router-link>
 					<router-link to="/rongyi">

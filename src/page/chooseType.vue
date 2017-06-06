@@ -5,10 +5,8 @@
 		<h2>当前品牌：<span>{{this.brandName}}</span> </h2>
 		<div class="type-wrapper" v-for='item in list'>
 			<div class="type-title">{{item[0].seriesGroupName}}</div>
-			<div v-for='item in item'>
-				<div class="type-content">
-					<span class="car-style" @click='chooseCarType(item)'>{{item.seriesName}}</span>
-				</div>
+			<div class="type-content" v-for='item in item'>
+				<span class="car-style" @click='chooseCarType(item)'>{{item.seriesName}}</span>
 			</div>
 		</div>
 	</div>

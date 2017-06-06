@@ -44,7 +44,6 @@
 		position: relative;
 		border: none;
 		width: 100%;
-		height: 0.88rem;
 		&:after {
 			content: '';
 			position: absolute;
@@ -63,26 +62,28 @@
 	header {
 		display: flex;
 		justify-content: center;
-		margin-top: 0.8rem;
+		margin-top: 0.32rem;
 		position: relative;
 		@include border(#d0d0d0);
-		height: 1.8rem;
+		height: 0.26rem;
 	}
-
+.BusinessCredit{
+	padding-top: 0.44rem;
+}
 	.pass-title {
-		font-size: 0.9rem;
+		font-size: 0.36rem;
 		color: #353535;
 		font-family: PingFang-SC-Bold;
-		margin-bottom: 0.65rem;
+		margin-bottom: 0.26rem;
 	}
 
 	.pic {
 		display: flex;
 		justify-content: center;
-		margin-top: 3.9rem;
+		margin-top: 1.56rem;
 		img {
-			height: 4.4rem;
-			width: 4.4rem;
+			height: 1.76rem;
+			width: 1.76rem;
 		}
 	}
 
@@ -90,10 +91,10 @@
 		display: flex;
 		justify-content: center;
 		text-align: center;
-		margin-top: 1rem;
+		margin-top: 0.4rem;
 		p {
 			color: #353535;
-			font-size: 0.8rem;
+			font-size: 0.32rem;
 			font-family: PingFang-SC-Medium;
 		}
 	}
@@ -102,40 +103,42 @@
 		display: flex;
 		justify-content: center;
 		text-align: center;
-		margin-top: 0.55rem;
+		margin-top: 0.22rem;
 		p {
 			color: #353535;
-			font-size: 0.75rem;
+			font-size: 0.3rem;
 			font-family: PingFang-SC-Regular;
 		}
 	}
 
 	.left {
 		position: absolute;
-		left: 0.54rem;
+		left: 0.216rem;
 		top: 0;
-		width: 0.67rem;
-		height: 1.1rem;
+		width: 0.268rem;
+		height: 0.44rem;
 	}
 
 	footer {
 		display: flex;
-		margin-top: 1.6rem;
-		bottom: 1.2rem;
+		margin-top: 0.64rem;
+		bottom: 0.48rem;
 		justify-content: center;
 		margin-left: 5%;
+
 		div {
-			width: 5.8rem;
-			height: 2rem;
+			width: 2.32rem;
+			height: 0.8rem;
 			background: #ff7635;
+			border-radius: 2px;
 		}
 	}
 
 	footer p {
-		line-height: 2rem;
+		line-height: 0.8rem;
 		text-align: center;
 		color: #ffffff;
-		font-size: 0.8rem;
+		font-size: 0.32rem;
 		font-family: PingFang-SC-Medium;
 	}
 

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding-top: 0.88rem;">
 		<public-header></public-header>
 		<div class="banner">
 			<img class="banner" src="../../static/img/pic_banner@2x.png" />
@@ -84,29 +84,29 @@ export default {
 
 
 .pass-title {
-	font-size: 0.9rem;
+	font-size: 0.36rem;
 	color: #353535;
 	font-family: PingFang-SC-Bold;
-	margin-bottom: 0.65rem;
+	margin-bottom: 0.26rem;
 }
 
 .left {
 	position: absolute;
-	left: 0.54rem;
+	left: 0.216rem;
 	top: 0;
-	width: 0.67rem;
-	height: 1.1rem;
+	width: 0.268rem;
+	height: 0.44rem;
 }
 
 .banner {
-
-	height: 7.5rem;
+	
+	height: 3rem;
 	width: 100%;
 }
 
 .mortgage li {
 	position: relative;
-	height: 2.7rem;
+	height: 1.08rem;
 }
 
 .mortgage-title {
@@ -117,37 +117,37 @@ export default {
 }
 
 .circle {
-	height: 0.25rem;
-	width: 0.25rem;
+	height:0.1rem;
+	width:0.1rem;
 	background: #353535;
 	border-radius: 50%;
 	position: absolute;
-	top: 1.2rem;
-	left: 0.54rem;
+	top: 0.52rem;
+	left: 0.216rem;
 }
 
 .mortgage-font {
 	color: #353535;
-	font-size: 0.6rem;
+	font-size: 0.24rem;
 	font-family: PingFang-SC-Regular;
 	position: absolute;
-	top: 2.2rem;
-	left: 0.54rem;
+	top: 0.88rem;
+	left: 0.216rem;
 }
 
 .mortgage-shows {
 	font-family: '黑体';
 	font-weight: 600;
 	position: absolute;
-	font-size: 0.7rem;
-	top: 1rem;
-	left: 0.95rem;
+	font-size: 0.28rem;
+	top: 0.4rem;
+	left: 0.38rem;
 }
 
 .zsd-title {
-	margin-left: 0.54rem;
+	margin-left: 0.216rem;
 	margin-top: 0.5rem;
-	font-size: 0.75rem;
+	font-size: 0.3rem;
 	color: #353535;
 	font-family: PingFang-SC-Regular;
 }
@@ -159,19 +159,20 @@ export default {
 
 footer {
 	display: flex;
-	margin-top: 4rem;
+	margin-top: 1.6rem;
 	width: 90%;
-	height: 2rem;
+	height: 0.8rem;
 	background: #ff7635;
-	margin-bottom: 1.2rem;
+	margin-bottom: 0.48rem;
 	justify-content: center;
 	margin-left: 5%;
+	border-radius: 2px;
 }
 
 footer p {
-	line-height: 2rem;
+	line-height: 0.8rem;
 	color: #ffffff;
-	font-size: 0.8rem;
+	font-size: 0.32rem;
 	font-family: PingFang-SC-Medium;
 }
 </style>

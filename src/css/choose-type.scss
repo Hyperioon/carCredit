@@ -11,6 +11,7 @@
 		border-top: 1px solid #d0d0d0;
 	}
 	.type-wrapper {
+		border-bottom: 1px solid #d0d0d0;
 		.type-title {
 			font-size: 0.24rem;
 			height: 0.4rem;
@@ -20,13 +21,16 @@
 		}
 		.type-content {
 			padding: 0 0.26rem;
+			border-bottom: 1px solid #d0d0d0;
+			&:last-child {
+				border: none;
+			}
 			.car-style {
 				margin-top: 0.3rem;
 				padding-bottom: 0.24rem;
 				font-size: 0.32rem;
 				font-family: Ping-Fang-SC-Medium;
 				display: block;
-				border-bottom: 1px solid #d0d0d0;
 			}
 		}
 	}

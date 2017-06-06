@@ -1,5 +1,5 @@
 <template>
-	<div class="apply">
+	<div class="apply" style="padding-top: 0.88rem;">
 		<public-header></public-header>
 		<div class="apply-ipt">
 			<p class="apply-p">真实姓名：</p>
@@ -101,31 +101,31 @@
 			<div class="demo-picker-container" v-show="leave">
 				<p @click="quxiao">取消</p>
 				<span @click="sure">确定</span>
-				<div style="height:2rem;"></div>
+				<div style="height:0.8rem;"></div>
 				<mt-picker :slots="slots0" @change="onValuesChange1" :visibleItemCount=3></mt-picker>
 			</div>
 			<div class="demo-picker-container" v-show="stu">
 				<p @click="quxiao">取消</p>
 				<span @click="sure1">确定</span>
-				<div style="height:2rem;"></div>
+				<div style="height:0.8rem;"></div>
 				<mt-picker :slots="slots1" @change="onValuesChange2" :visibleItemCount=3></mt-picker>
 			</div>
 			<div class="demo-picker-container" v-show="years">
 				<p @click="quxiao">取消</p>
 				<span @click="sure2">确定</span>
-				<div style="height:2rem;"></div>
+				<div style="height:0.8rem;"></div>
 				<mt-picker :slots="slots2" @change="onValuesChange3" :visibleItemCount=3></mt-picker>
 			</div>
 			<div class="demo-picker-container" v-show="fir">
 				<p @click="quxiao1">取消</p>
 				<span @click="sure3">确定</span>
-				<div style="height:2rem;"></div>
+				<div style="height:0.8rem;"></div>
 				<mt-picker :slots="slots3" @change="onValuesChange4" :visibleItemCount=3></mt-picker>
 			</div>
 			<div class="demo-picker-container" v-show="sec">
 				<p @click="quxiao2">取消</p>
 				<span @click="surelast">确定</span>
-				<div style="height:2rem;"></div>
+				<div style="height:0.8rem;"></div>
 				<mt-picker :slots="slots4" @change="onValuesChange5" :visibleItemCount=3></mt-picker>
 			</div>
 		</div>
@@ -233,20 +233,13 @@
 				asd: [],
 				statu: '',
 				status: '',
-				operateTypeId: ''
+				operateTypeId: '',
+				customerKey: ''
 			};
 		},
-		// watch: {
-		// 	obj: {
-		// 		handle(obj) {
-		// 			if (obj.name) {
-
-		// 			}
-
-		// 		},
-		// 		deep: true
-		// 	}
-		// },
+		created: function () {
+			this.customerKey = localStorage.getItem('customerKey');
+		},
 		computed: {
 			comname() {
 				if (this.idcard) {
@@ -446,8 +439,8 @@
 				vm.asd = [];
 				this.slots4[0].values = [];
 				vm.$http.post(vm.apiUrl1, {
-						emulateJSON: true
-					})
+					emulateJSON: true
+				})
 					.then((response) => {
 						if (response.data.code === 0) {
 							console.log(response.data);
@@ -492,11 +485,11 @@
 						shopName: this.shopval,
 						manageTime: this.nianx,
 						operateTypeId: this.operateTypeId,
-						customerKey: 2
+						customerKey: this.customerKey
 					};
 					this.$http.post(this.apiUrl3, info, {
-							emulateJSON: true
-						})
+						emulateJSON: true
+					})
 						.then((response) => {
 							if (response.data.code === 0) {
 								this.$router.push('/Succsess');
@@ -550,8 +543,8 @@
 				if (this.statu) {
 					let vm = this;
 					vm.$http.post(vm.apiUrl2, {
-							type: vm.statu
-						}, {
+						type: vm.statu
+					}, {
 							emulateJSON: true
 						})
 						.then((response) => {
@@ -581,15 +574,6 @@
 
 </script>
 <style lang="scss">
-	
-	input {
-		margin-left: 0.26rem;
-		font-size: 0.75rem ! important;
-	}
-	p {
-		margin-left: 0.26rem ;
-		font-size: 0.75rem ! important;
-	}
 	@mixin border($color) {
 		position: relative;
 		border: none;
@@ -608,120 +592,115 @@
 			transform-origin: 0 0;
 		}
 	}
+
 	.trans p {
-		line-height: 2rem;
-		height: 2rem;
+		line-height: 0.8rem;
+		height: 0.8rem;
 		@include border(#d0d0d0);
-		font-size: 0.8rem;
-	}
-
-	.pass-title {
-		font-size: 0.9rem;
-		color: #353535;
-		font-family: PingFang-SC-Bold;
-		margin-bottom: 0.65rem;
-	}
-
-	.left {
-		position: absolute;
-		left: 0.54rem;
-		top: 0;
-		width: 0.67rem;
-		height: 1.1rem;
+		font-size: 0.32rem;
 	}
 
 	.apply-ipt {
-		height: 2rem;
+		height: 0.8rem;
 		width: 100%;
-		margin-top: 0.75rem;
+		margin-top: 0.3rem;
 		position: relative;
 	}
 
 	.apply-p {
 		position: absolute;
-		top: 0.65rem;
-		left: 0.54rem;
+		top: 0.26rem;
+		left: 0.216rem;
 		width: 25%;
-		font-size: 0.75rem;
+		font-size: 0.3rem;
 	}
 
 	.apply-d {
-		line-height: 1.95rem;
+		line-height: 0.78rem;
 		position: absolute;
-		height: 1.95rem;
+		height: 0.78rem;
 		width: 70%;
 		left: 25%;
-		font-size: 0.75rem;
+		font-size: 0.3rem;
 		border: 1px solid #d0d0d0;
 		i {
 			position: absolute;
 		}
 		input {
-			height: 1.6rem;
+			height: 0.64rem;
 			width: 94%;
-			font-size: 0.75rem;
+			font-size: 0.3rem;
 			outline: none;
 			border: 0;
+		}
+		input::-webkit-input-placeholder {
+			font-family: PingFang-SC-Regular;
+			font-size: 0.3rem;
+			color: #aaaaaa;
 		}
 	}
 
 	.demo-picker-container {
 		width: 100%;
-		height: 9.2rem;
+		height: 3.68rem;
 		background: #ffffff;
 		position: absolute;
 		bottom: 0;
 	}
 
 	.picker-item {
-		font-size: 0.75rem;
+		font-size: 0.3rem;
 	}
 
 	.demo-picker-container p {
 		float: left;
-		margin-left: 0.54rem;
-		font-size: 0.75rem;
+		margin-left: 0.216rem;
+		font-size: 0.3rem;
 		color: #8f8f8f;
 		font-family: PingFang-SC-Medium;
-		margin-top: 0.65rem;
+		margin-top: 0.26rem;
 	}
 
 	.demo-picker-container span {
 		float: right;
-		margin-right: 0.54rem;
-		font-size: 0.75rem;
+		margin-right: 0.216rem;
+		font-size: 0.3rem;
 		color: #8f8f8f;
 		font-family: PingFang-SC-Medium;
-		margin-top: 0.65rem;
+		margin-top: 0.26rem;
 	}
 
 	.apply-ipt span {
 		position: absolute;
-		top: -0.8rem;
+		top: -0.32rem;
 		left: 25%;
-		font-size: 0.6rem;
+		font-size: 0.24rem;
 		color: red;
 	}
 
 	.apply-d p {
-		font-size: 0.75rem;
-		color: #aaaaaa;
+		font-size: 0.3rem;
+		color: rgb(209, 209, 209);
 		font-family: PingFang-SC-Regular;
 	}
 
 	footer {
-		position: fixed;
-		width: 96%;
-		height: 2rem;
+		display: flex;
+		width: 90%;
+		height: 0.8rem;
 		background: #ff7635;
-		text-align: center;
-		bottom: 1.2rem;
-		left: 2%;
+		bottom: 0.48rem;
+		justify-content: center;
+		margin-left: 5%;
+		margin-top: 1.78rem;
+		border-radius: 2px;
+		margin-bottom: 0.48rem;
 	}
+
 	footer p {
-		line-height: 2rem;
+		line-height: 0.8rem;
 		color: #ffffff;
-		font-size: 0.8rem;
+		font-size: 0.32rem;
 		font-family: PingFang-SC-Medium;
 	}
 
@@ -741,28 +720,27 @@
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		margin-top: 1rem;
+		margin-top: 0.4rem;
 	}
 
 	.infofale p {
-		width: 7.75rem;
+		width: 3.1rem;
 		background: #525252;
-		height: 2rem;
-		border-radius: 0.5rem;
+		height: 0.8rem;
+		border-radius: 0.2rem;
 		color: #ffffff;
-		font-size: 0.75rem;
+		font-size: 0.3rem;
 		font-family: PingFang-SC-Regular;
 		text-align: center;
-		line-height: 2rem;
+		line-height: 0.8rem;
 	}
 
 	.img-up {
 		position: absolute;
-		right: 0.5rem;
+		right: 0.2rem;
 		img {
-			height: 0.5rem;
-			width: 0.8rem;
+			height: 0.2rem;
+			width: 0.32rem;
 		}
 	}
-
 </style>

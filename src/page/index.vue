@@ -36,9 +36,11 @@
 		<div class="inter">
 			<span class="cell-text">热门推荐</span>
 		</div>
-		<div class="zsd">
-			<span>臻商贷</span>
-		</div>
+		<router-link to='/BusinessCredit'>
+			<div class="zsd">
+				<span>臻商贷</span>
+			</div>
+		</router-link>
 		<div class="words">
 			<p class="word-top">臻e盾安保商户专享，无抵押、免担保小额借款。</p>
 			<div class="word-down">
@@ -53,9 +55,11 @@
 			</div>
 		</div>
 		<div style="height:0.2rem;background:#f2f2f2;"></div>
-		<div class="zsd">
-			<span>车抵贷</span>
-		</div>
+		<router-link to='/carCredit'>
+			<div class="zsd">
+				<span>车抵贷</span>
+			</div>
+		</router-link>
 		<div class="words">
 			<p class="word-top">贷款额度高、车辆安全、极速放款。</p>
 			<div class="word-down">
@@ -84,12 +88,17 @@ export default {
 			apiUrl: 'api/commission/home.json',
 			//  是否设置过交易密码
 			apiUrl1: 'api/trade/pwd/exist.json',
-			exist: ''
+			exist: '',
+			customerKey: ''
 		};
 	},
-
 	created: function () {
-
+		var customerKey = this.$route.query.customerKey;
+		if (customerKey) {
+			localStorage.setItem('customerKey', customerKey);
+		} else {
+			this.customerKey = localStorage.getItem('customerKey');
+		}
 	},
 	methods: {
 		// 原生返回
@@ -111,6 +120,7 @@ export default {
 .index {
 	padding-top: 0.88rem;
 }
+
 @mixin border($color) {
 	position: relative;
 	border: none;

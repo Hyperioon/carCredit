@@ -12,7 +12,7 @@
 			</router-link>
 		</div>
 		<div class='evalua'>
-			<span class='left-content'>全新车上牌时间</span>
+			<span class='left-content'>上牌时间(全新车)</span>
 			<div class='right'>
 				<span v-show='!dataYear' @click="open('left')">未选择 </span>
 				<span class='arrow'></span>
@@ -45,9 +45,8 @@
 				<mt-picker :slots="addressSlots" @change="onAddressChange" :visible-item-count="5"></mt-picker>
 			</div>
 		</mu-popup>
-	
 		<!--选择日期-->
-		<mu-popup popupClass='choose-time' position="left" :open="leftPopup" @close="close('left')">
+		<mu-popup v-show="this.range" popupClass='choose-time' position="left" :open="leftPopup" @close="close('left')">
 			<mu-appbar>
 				<mu-flat-button slot="left" label="取消" color="white" @click="close('left')" />
 				<mu-flat-button slot="right" label="确定" color="white" @click="confim('left')" />
@@ -141,6 +140,7 @@ export default {
 			list: [],
 			data: ['', ''],
 			dataYear: '',
+			customerKey: '',
 			dataMonth: '',
 			api: 'api/carCredit/m/filter/che300/queryCitylList.json',
 			evaluaApi: 'api/carCredit/m/filter/che300/queryCarPrice.json'
@@ -265,6 +265,13 @@ export default {
 	mounted() {
 		this.dataYear = this.car.dataYear;
 		this.range = this.car.range;
+		var customerKey = this.$route.query.customerKey;
+		if (customerKey) {
+			localStorage.setItem('customerKey', customerKey);
+		} else {
+			this.customerKey = localStorage.getItem('customerKey');
+		}
+		console.log(this.customerKey);
 	}
 };
 
@@ -295,6 +302,7 @@ export default {
 
 .mu-paper-1 {
 	box-shadow: none;
+	position: relative;
 }
 
 .mu-content-block {

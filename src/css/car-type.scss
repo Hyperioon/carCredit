@@ -24,6 +24,9 @@
 			padding: 0 0.26rem;
 			.content-item {
 				border-bottom: 1px solid #d0d0d0;
+				&:last-child {
+					border: none;
+				}
 				.car-style {
 				margin-top: 0.3rem;
 				margin-bottom: 0.24rem;
